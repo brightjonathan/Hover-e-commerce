@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { selectemail } from '../../Redux/Slice/AuthSlice';
-//import { Link } from 'react-router-dom';
 import PageNotFound from '../../Pages/PageNotFound/Page404';
 
 
@@ -13,16 +12,6 @@ const AdminRoute = ({children}) => {
   }
 
   return (
-    // <section style={{height: '80vh'}}>
-    //   <div className="container">
-    //     <h2>Permission denied</h2>
-    //     <p>This page can only be view by an admin user</p>
-    //     <br/>
-    //     <Link to='/'> <button className='--btn'>&larr; Back to Home page</button> </Link>
-    //   </div>
-    // </section>
-
-    //ADDING THE PAGENOTFOUND FILE 
     <>
     <PageNotFound />
     </>

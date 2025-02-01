@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../Firebase/Firebase-config";
 import { toast } from "react-toastify";
-import spinnerimg from '../../../Assests/loadingspinner.gif';
+import spinnerimg from '../../../Assests/loader.gif';
 
 const ProductDetails = () => {
   const {id} = useParams();
-  console.log(id);
 
   const [ProductDetails, setProductDetails] = useState(null);
   
@@ -45,7 +44,7 @@ const ProductDetails = () => {
           <div>
             <Link to='/#products'>&larr; Back to product </Link>
           </div>
-          {ProductDetails === null ? (<img src={spinnerimg} alt="spinnerImg" />) : (
+          {ProductDetails === null ? (<img src={spinnerimg} alt="spinnerImg" width={100}/>) : (
             <>
             <div className={Styles.details}>
                <div className={Styles.img}>
@@ -75,3 +74,4 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+

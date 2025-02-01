@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import styles from './AddProduct.module.scss';
-import Card from '../../Card/Card'
+import Card from '../../Card/Card';
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { auth, db, storage } from '../../../Firebase/Firebase-config';
 import { toast } from 'react-toastify';

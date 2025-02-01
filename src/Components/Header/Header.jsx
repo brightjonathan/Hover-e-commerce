@@ -74,7 +74,7 @@ const Header = () => {
 
   const confirmLogOut = ()=>{
     Notiflix.Confirm.show(
-      "Logging out from your Account!!!",
+      "Log out from your Account!!!",
       "You are about to Logout from your account",
       "Yes",
       "Cancel",

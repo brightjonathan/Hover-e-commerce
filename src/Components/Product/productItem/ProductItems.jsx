@@ -15,7 +15,7 @@ const ProductItems = ({Productitems, Grid}) => {
 
   //Fourthy Percent discount and added a comma func...
   let discount = Price * 60 / 100;
-  const TotalDiscount =  Price + discount
+  const TotalDiscount =  Price + discount;
   const PriceWithComma = Number(TotalDiscount).toLocaleString('en-US');
   
   //money-saved 
@@ -44,10 +44,10 @@ const ProductItems = ({Productitems, Grid}) => {
             <div className={styles.content}>
               <div className={styles.details}>
                 <h4>{ShortenText(ProductName, 18)}</h4> 
-                <p> <h4 className='text-[green]'>&#x20A6;{`${RealPrice}`}</h4> &nbsp; &nbsp;
+                <div> <h4 className='text-[green]'>&#x20A6;{`${RealPrice}`}</h4> &nbsp; &nbsp;
                     <span className='line-through text-[red] text-[15px] '>&#x20A6;{PriceWithComma} </span> <br/> 
                     <span className='text-[15px] px-1' >You save <i className='text-[green]'>&#x20A6;{TotalMoneysaved}</i></span> 
-                </p>
+                </div>
               </div>
            {!Grid && <p className='font-mono pt-4'>{ShortenText(Description, 180)}</p>} 
           <button className="w-[80%] py-4 my-4 bg-slate-900 text-white rounded-2xl text-2xl font-bold " > Add To Cart </button>
