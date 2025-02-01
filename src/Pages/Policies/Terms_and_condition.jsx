@@ -134,7 +134,7 @@ const Terms_and_condition = () => {
 
       <div>
         <h2 className='mt-9 text-[20px] font-semibold'>13. <span className='underline'> Privacy </span></h2>
-        <p className='pt-3'>We view protection of Your privacy as a very important principle. We understand clearly that you and Your Personal Information is one of our most important assets. We store and process Your Information on computers that may be protected by physical as well as reasonable technological security measures and procedures in accordance with Information Technology Act 2000 and rules there under. Our current Privacy Policy is available at <Link to='/privacy-policy' className='text-[blue] hover:text-[blue]'>Privacy-policy</Link>. If you object to your Information being transferred or used in this way, please do not use shopnow.com website Information submitted may be made available to shopnow partners who can in turn use it for verification purposes</p>
+        <p className='pt-3'>We view protection of Your privacy as a very important principle. We understand clearly that you and Your Personal Information is one of our most important assets. We store and process Your Information on computers that may be protected by physical as well as reasonable technological security measures and procedures in accordance with Information Technology Act 2000 and rules there under. Our current Privacy Policy is available at <Link to='/privacy-and-policy' className='text-[blue] hover:text-[blue]'>Privacy-policy</Link>. If you object to your Information being transferred or used in this way, please do not use shopnow.com website Information submitted may be made available to shopnow partners who can in turn use it for verification purposes</p>
       </div>
 
       <div>

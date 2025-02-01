@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import logo from '../../Assests/kc logo.png'
-import { AiOutlineInstagram } from 'react-icons/ai'
-import { FaFacebookF, FaGithub, FaTwitter } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { AiOutlineInstagram } from 'react-icons/ai';
+import { FaFacebookF, FaGithub, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -48,8 +48,8 @@ const Footer = () => {
                     <Link to={'/'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'>About us</li> </Link>
                     <Link to={'/'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'>Careers</li> </Link>
                     <Link to={'/'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'>Our Blogs</li> </Link>
-                    <Link to={'/'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'>Terms and conditions</li> </Link> 
-                    <Link to={'/'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'> Privacy and Policy</li> </Link>
+                    <Link to={'/term-and-condition'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'>Terms and conditions</li> </Link> 
+                    <Link to={'/privacy-and-policy'}> <li className='py-2 cursor-pointer hover:text-[#9A3011] text-white text-[15px]'> Privacy and Policy</li> </Link>
                     </ul>
                 </div>
 
