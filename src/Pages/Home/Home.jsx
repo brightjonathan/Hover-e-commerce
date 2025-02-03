@@ -28,10 +28,7 @@ const Home = () => {
     <div>
      <UserName/>
       <Slider />
-
       <AdPage/>
-   
-
       <Product/>
       <Partners/>
     </div>

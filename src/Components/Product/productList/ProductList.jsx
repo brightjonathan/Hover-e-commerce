@@ -12,6 +12,10 @@ const ProductList = ({selectorProduct}) => {
    const [Grid, setGrid] = useState(true)
    const [Search, setSearch] = useState('');
 
+     // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(9);
+
    const dispatch = useDispatch();
    
 

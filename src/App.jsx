@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register'
-import Reset from './Pages/Auth/Reset'
+import Reset from './Pages/Auth/Reset';
 import Page404 from './Pages/PageNotFound/Page404';
 import Term from './Pages/Policies/Terms_and_condition';
 import Polices from './Pages/Policies/Privacy_and_Policy';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Styles from './ProductDetails.module.scss';
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+//import { useDispatch, useSelector } from "react-redux";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../Firebase/Firebase-config";
 import { toast } from "react-toastify";
