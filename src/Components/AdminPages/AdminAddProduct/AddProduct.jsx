@@ -138,11 +138,17 @@ const SubmitProduct = async (e) => {
 
       await addDoc(collectionRef,
         { 
+          // author: {
+          //   Admin: auth.currentUser.displayName,
+          //   id: auth.currentUser.uid,
+          //   email: auth.currentUser.email
+          // },
           author: {
-            Admin: auth.currentUser.displayName,
-            id: auth.currentUser.uid,
-            email: auth.currentUser.email
+            Admin: 'THE ADMIN IS IN CHARGE OF ALL THE PRODUCTS',
+            id: '***',
+            email: '***'
           },
+
 
           //getting the values
           ProductName: ProductName,

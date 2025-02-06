@@ -21,9 +21,7 @@ import { selectIsLoggedIn } from "../../Redux/Slice/AuthSlice";
 const Cart = () => {
 
 
-  const cartItems = useSelector(selectCartItems);
-  console.log(cartItems);
-  
+  const cartItems = useSelector(selectCartItems);  
   const cartTotalAmount = useSelector(selectCartTotalAmount);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
   const dispatch = useDispatch();
@@ -93,8 +91,6 @@ const Cart = () => {
               <tbody>
                 {cartItems.map((cart, index) => {
                   const { id, Brand, Category, Description, Price, ProductName, imageURL, cartQuantity } = cart;
-                  //console.log(cart);
-                  
                   return (
                     <tr key={id}>
                       <td>{index + 1}</td>
@@ -158,7 +154,7 @@ const Cart = () => {
                     <h4>Subtotal:</h4>
                     <h3>&#8358;{`${cartTotalAmount.toLocaleString('en-us')}`}</h3>
                   </div>
-                  <p>Tax an shipping calculated at checkout</p>
+                  <p>Tax and shipping calculated at checkout</p>
                   <button
                     className="--btn --btn-primary --btn-block"
                     onClick={checkout}
