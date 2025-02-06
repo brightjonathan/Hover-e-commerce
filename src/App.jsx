@@ -16,6 +16,7 @@ import AdminOnlyRoute from './Components/AdminOnlyRoute/AdminRoute';
 import Admin from './Pages/Admin/Admin';
 import ProductDetails from './Components/Product/productDetails/ProductDetails';
 import OrderHistory from './Pages/OrderHistory/OrderHistory';
+import Cart from './Pages/Cart/Cart';
 
 
 
@@ -48,6 +49,8 @@ const App = () => {
 
        <Route path="/product-details/:id" element={<ProductDetails />} />
        <Route path="/order-history" element={<OrderHistory />} />
+       <Route path="/cart" element={<Cart />} />
+
       </Routes>
 
       <Footer/>

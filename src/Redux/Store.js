@@ -3,6 +3,8 @@ import authReducer from './Slice/AuthSlice';
 import ProductReducer from './Slice/ProductSlice';
 import filterReducer from './Slice/FilterSlice';
 import OrderReducer from './Slice/OrderSlice'
+import cartReducer from './Slice/CartSlice';
+import checkoutReducer from './Slice/CheckoutSlice'
 
 //middleware func... to stop some error
 const middleware = (getDefaultMiddleware) => {
@@ -22,8 +24,14 @@ const rootReducer = combineReducers({
   //from slice/FilterSlice
   filter: filterReducer,
 
-  orders: OrderReducer
-
+  //from slice/orderslice
+  orders: OrderReducer,
+  
+  //from slice/cartslice
+  cart: cartReducer,
+  
+  //from slice/checkoutslice
+  checkout: checkoutReducer
   
 });
 

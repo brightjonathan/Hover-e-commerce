@@ -1,18 +1,20 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import styles from './Header.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {HiOutlineMenuAlt3, HiShoppingCart} from 'react-icons/hi'
-import{FaTimes} from 'react-icons/fa';
-//import {AiOutlineHeart} from 'react-icons/ai';
+import{FaShoppingCart, FaTimes} from 'react-icons/fa';
 import logo from '../../Assests/kc logo.png';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase-config';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-//import { SET_ACTIVE_USER, REMOVE_ACTIVE_USER } from '../../Redux/Slice/AuthSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import ShowOnLogIn, { ShowOnLogOut } from '../HiddenLink/HiddenLink';
 import  { AdminRouteLink } from '../AdminOnlyRoute/AdminRoute';
 import Notiflix from 'notiflix';
+import {
+  CALCULATE_TOTAL_QUANTITY,
+  selectCartTotalQuantity,
+} from "../../Redux/Slice/CartSlice";
 
 
 
@@ -23,12 +25,7 @@ const Logo = (
    </div>
 );
 
-//Re-useable cart
-const cart = (
-    <span className={styles.cart}>
-    <Link to='/cart'>  Cart <p>0</p> <HiShoppingCart size={25}/> </Link>
-    </span>
-);
+
 
 //re-useable mobileCart
 const mobileCart = (
@@ -48,7 +45,7 @@ const activeLink = ({isActive})=> (isActive ? `${styles.active}` : ' ')
 const Header = () => {
 
   const navigate = useNavigate();
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [ShowMenu, setShowMenu] = useState(false);
 
@@ -94,6 +91,24 @@ const Header = () => {
     )
   }
 
+
+  //CART
+  const cartTotalQuantity = useSelector(selectCartTotalQuantity);
+  useEffect(() => {
+    dispatch(CALCULATE_TOTAL_QUANTITY());
+  }, []);
+
+
+  //Re-useable cart
+const cart = (
+  <span className={styles.cart}>
+  <Link to="/cart">
+    Cart
+    <FaShoppingCart size={20} />
+    <p>{cartTotalQuantity}</p>
+  </Link>
+</span>
+);
 
 
 

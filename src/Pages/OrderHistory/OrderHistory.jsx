@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
@@ -11,7 +11,7 @@ const OrderHistory = () => {
 
   const { data, isLoading } = useFetchCollection("orders");
   const orders = useSelector(selectOrderHistory);
-  console.log(orders);
+  //console.log(orders);
   
   const userID = useSelector(selectuserid);
 

@@ -2,12 +2,21 @@ import React from 'react';
 import styles from './ProductItem.module.scss';
 import Card from '../../Card/Card';
 import { Link } from 'react-router-dom';
+import {
+  ADD_TO_CART,
+  CALCULATE_TOTAL_QUANTITY,
+} from "../../../Redux/Slice/CartSlice";
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const ProductItems = ({Productitems, Grid}) => {
 
+  const dispatch = useDispatch();
+
   //De-structuring 
   const {id, ProductName, imageURL, Price, Category, Brand, Description} = Productitems;
+  //console.log(Productitems);
+  
   
   //Added a comma func... to the Price
   let RealPrice = Price;
@@ -32,6 +41,11 @@ const ProductItems = ({Productitems, Grid}) => {
     return text;
   };
 
+  const addToCart = (product) => {
+    dispatch(ADD_TO_CART(product));
+    dispatch(CALCULATE_TOTAL_QUANTITY());
+  };
+
 
   return (
     <Card className={Grid ? `grid md:grid-cols-7 px-2 pt-4 text-center gap-2 ` : `grid md:grid-cols-2 px-2 pt-4 text-center gap-4`}>
@@ -50,7 +64,7 @@ const ProductItems = ({Productitems, Grid}) => {
                 </div>
               </div>
            {!Grid && <p className='font-mono pt-4'>{ShortenText(Description, 180)}</p>} 
-          <button className="w-[80%] py-4 my-4 bg-slate-900 text-white rounded-2xl text-2xl font-bold " > Add To Cart </button>
+          <button className="w-[80%] py-4 my-4 bg-slate-900 text-white rounded-2xl text-2xl font-bold"  onClick={() => addToCart(Productitems)} > Add To Cart </button>
         </div>
         </div>
     </Card>
