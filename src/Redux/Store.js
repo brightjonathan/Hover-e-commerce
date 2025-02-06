@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from './Slice/AuthSlice';
 import ProductReducer from './Slice/ProductSlice';
 import filterReducer from './Slice/FilterSlice';
+import OrderReducer from './Slice/OrderSlice'
 
 //middleware func... to stop some error
 const middleware = (getDefaultMiddleware) => {
@@ -19,7 +20,9 @@ const rootReducer = combineReducers({
   product: ProductReducer,
 
   //from slice/FilterSlice
-  filter: filterReducer
+  filter: filterReducer,
+
+  orders: OrderReducer
 
   
 });

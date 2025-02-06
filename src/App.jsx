@@ -15,6 +15,7 @@ import Polices from './Pages/Policies/Privacy_and_Policy';
 import AdminOnlyRoute from './Components/AdminOnlyRoute/AdminRoute';
 import Admin from './Pages/Admin/Admin';
 import ProductDetails from './Components/Product/productDetails/ProductDetails';
+import OrderHistory from './Pages/OrderHistory/OrderHistory';
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
 
 
        <Route path="/product-details/:id" element={<ProductDetails />} />
+       <Route path="/order-history" element={<OrderHistory />} />
       </Routes>
 
       <Footer/>

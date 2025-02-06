@@ -13,7 +13,14 @@ const FilterSlice = createSlice({
 
         //createdv a filter by search payload
         FILTER_BY_SEARCH(state, action){
-          console.log(action.payload);
+          const { products, search } = action.payload;
+          const tempProducts = products.filter(
+            (product) =>
+              product.name.toLowerCase().includes(search.toLowerCase()) ||
+              product.category.toLowerCase().includes(search.toLowerCase())
+          );
+
+           state.filteredProducts = tempProducts;
         },
     }
   });
@@ -22,32 +29,5 @@ const FilterSlice = createSlice({
   
   export const selectFilterProduct = (state) => state.filter.filteredProducts;
 
-  export default FilterSlice.reducer
+  export default FilterSlice.reducer;
 
-
-
-
-
-
-
-
-
-
-
-//   import { createSlice } from "@reduxjs/toolkit";
-
-// //setting the initail state 
-// const initialState = {
-
-// };
-
-
-// const FilterSlice = createSlice({
-//     name: Product,
-//     initialState,
-//     reducers: {}
-//   });
-
-//   export const {} = FilterSlice.actions
-
-//   export default FilterSlice.reducer
