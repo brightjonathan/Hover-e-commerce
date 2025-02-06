@@ -35,7 +35,7 @@ const UserName = () => {
  
   return (
     <div>
-      <ShowOnLogIn> <p className='bg-transparent text-[20px] lg: w-[100%] p-4 rounded text-center font-semibold'>Welcome, {userName} </p> </ShowOnLogIn>
+      <ShowOnLogIn> <p className='bg-transparent text-[20px] lg:w-[100%] p-4 lg:pt-[12vh] md:pt-[7vh]  sm:pt-[50vh] rounded text-center font-semibold'>Welcome, {userName} </p> </ShowOnLogIn>
     </div>
   )
 }

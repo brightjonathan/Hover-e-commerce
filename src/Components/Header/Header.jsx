@@ -114,7 +114,7 @@ const cart = (
 
   
   return (
-    <header className='shadow-xl'>
+    <header className='shadow-xl fixed z-10'>
         <div className={`${styles.header} `}>
           {Logo}
           <nav className={ShowMenu ? `${styles['show-nav']}` : `${styles['hide-nav']}`}>

@@ -1,11 +1,13 @@
 import React from 'react';
 import {  BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// ALL Directories
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home/Home';
 import Contact from './Pages/Contact/Contact';
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register'
 import Reset from './Pages/Auth/Reset';
