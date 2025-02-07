@@ -30,7 +30,7 @@ const OrderHistory = () => {
 
 
   return (
-    <section>
+    <section className="pt-[15vh]">
     <div className={`container ${styles.order}`}>
       <h2>Your Order History</h2>
       <p>

@@ -223,7 +223,7 @@ const EditProduct = async (e)=>{
 
 
     <div className={styles.product}>
-      <h2> {detectForm(id, 'Add new Product', 'Edit Product')} </h2>
+      <h2 className='pt-[10vh]'> {detectForm(id, 'Add new Product', 'Edit Product')} </h2>
      
      <Card cardClass={styles.Card}>
       <form onSubmit={detectForm(id, SubmitProduct , EditProduct)} >

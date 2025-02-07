@@ -86,7 +86,7 @@ const ViewProduct = () => {
     <>
     {IsLoading && <Loader />}
     <div className={styles.table}>
-      <h2> View All Product </h2> 
+      <h2 className='pt-[10vh]'> View All Product </h2> 
 
       {selectorProduct.length === 0 ? (<p> No product found </p>):(
         <table>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const AdminOrders = () => {
   return (
-    <div>
+    <div className='pt-[10vh]'>
       <h2> Admin Orders file </h2>
     </div>
   )

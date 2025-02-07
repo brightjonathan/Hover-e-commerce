@@ -64,7 +64,7 @@ const Cart = () => {
 
 
   return (
-    <section>
+    <section className="pt-[10vh]">
       <div className={`container ${styles.table}`}>
         <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
@@ -81,7 +81,7 @@ const Cart = () => {
               <thead>
                 <tr>
                   <th>s/n</th>
-                  <th>Product</th>
+                  <th>Product / Brand</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Total</th>
@@ -96,7 +96,7 @@ const Cart = () => {
                       <td>{index + 1}</td>
                       <td>
                         <p>
-                          <b>{ProductName}</b>
+                          <b>{Brand}</b>
                         </p>
                         <img
                           src={imageURL}
