@@ -17,7 +17,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const selectorProduct = useSelector(selectProducts);
-   console.log(selectorProduct);
+   //console.log(selectorProduct);
   
 
   useEffect(()=>{

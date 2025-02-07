@@ -13,7 +13,7 @@ const ProductSlice = createSlice({
   reducers: {
     // Store products safely
     STORE_PRODUCTs(state, action) {
-      console.log("Storing Products:", action.payload?.products);
+      //console.log("Storing Products:", action.payload?.products);
       state.products = action.payload?.products || []; // Ensures it's an array
     },
     // Get price range safely
