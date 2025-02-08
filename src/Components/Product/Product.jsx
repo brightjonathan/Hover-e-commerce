@@ -16,8 +16,8 @@ const Product = () => {
 
   const dispatch = useDispatch();
 
-  const selectorProduct = useSelector(selectProducts);
-   //console.log(selectorProduct);
+  const products = useSelector(selectProducts);
+   //console.log(products);
   
 
   useEffect(()=>{
@@ -40,7 +40,7 @@ const Product = () => {
         <div className={styles.content}>
           {IsLoading ? 
           ( <img src={spinnerImg} alt="Loading.." style={{ width: "30%" }} className="--center-all" />) 
-          : (<ProductList selectorProduct={selectorProduct} />) 
+          : (<ProductList products={products} />) 
           }
            
         </div>

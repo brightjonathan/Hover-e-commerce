@@ -5,23 +5,38 @@ import {FaListAlt} from 'react-icons/fa'
 import SearchApp from '../../Search/Search';
 import ProductItems from '../productItem/ProductItems';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  FILTER_BY_SEARCH,
+  selectFilterProduct
+} from "../../../Redux/Slice/FilterSlice";
 
 
-const ProductList = ({selectorProduct}) => {
+const ProductList = ({products}) => {
  
-   const [Grid, setGrid] = useState(true)
+   const dispatch = useDispatch();
+   const [Grid, setGrid] = useState(true);
    const [Search, setSearch] = useState('');
+
+   const filteredProducts = useSelector(selectFilterProduct);
 
      // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(9);
+  const [productsPerPage] = useState(12);
 
-   const dispatch = useDispatch();
-   
+    // Get Current Products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
-   useEffect(()=>{
-     
-   },[]);
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+
+  useEffect(() => {
+    dispatch(FILTER_BY_SEARCH({ products, Search }));
+  }, [dispatch, products, Search]);
+
 
   return (
     <div className={Styles["product-list"]} id="product">
@@ -52,15 +67,16 @@ const ProductList = ({selectorProduct}) => {
       </div>
 
       <div className={Grid ? `grid md:grid-cols-4 px-2 pt-4 text-center gap-4` : `grid md:grid-cols-3 px-2 pt-4 text-center gap-4`}>
-        {selectorProduct.lenght === 0 ? (
+        {products.lenght === 0 ? (
           <p>No product found.</p>
         ) : (
           <>
-            {selectorProduct.map((Productitems) => {
+            {currentProducts.map((Productitems) => {
               return (
                 <div key={Productitems.id}>
                   <ProductItems
-                   Grid={Grid}   
+                   Grid={Grid}
+                   {...Productitems}
                    Productitems={Productitems} /> 
                 </div>
               );
