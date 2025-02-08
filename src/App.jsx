@@ -19,6 +19,7 @@ import Admin from './Pages/Admin/Admin';
 import ProductDetails from './Components/Product/productDetails/ProductDetails';
 import OrderHistory from './Pages/OrderHistory/OrderHistory';
 import Cart from './Pages/Cart/Cart';
+import ProductReview from './Components/ProductReview/ProductReview';
 
 
 
@@ -52,6 +53,7 @@ const App = () => {
        <Route path="/product-details/:id" element={<ProductDetails />} />
        <Route path="/order-history" element={<OrderHistory />} />
        <Route path="/cart" element={<Cart />} />
+       <Route path='/review-product/:id' element={ <ProductReview/> }/>
 
       </Routes>
 

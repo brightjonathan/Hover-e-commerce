@@ -12,6 +12,7 @@ import {
   DECREASE_CART,
   selectCartItems,
 } from "../../../Redux/Slice/CartSlice";
+import Card from "../../Card/Card";
 
 const ProductDetails = () => {
  
@@ -21,8 +22,12 @@ const ProductDetails = () => {
   const cartItems = useSelector(selectCartItems);
   
   const { document } = useFetchDocument("PRODUCTS", id);
-  //const { data } = useFetchCollection("reviews");
+  const { data } = useFetchCollection("REVIEWS");
+  
   //const filteredReviews = data.filter((review) => review.productID === id);
+
+  const filteredReviews = data ? data.filter((review) => review.productID === id) : [];
+
 
   const cart = cartItems.find((cart) => cart.id === id);
   const isCartAdded = cartItems.findIndex((cart) => {
@@ -86,6 +91,37 @@ const ProductDetails = () => {
             </div>
             </>
           )}
+
+          {/*  */}
+
+          <Card cardClass={Styles.card}>
+          <h3>Product Reviews</h3>
+          <div>
+            {filteredReviews.length === 0 ? (
+              <p>There are no reviews for this product yet.</p>
+            ) : (
+              <>
+                {filteredReviews.map((item, index) => {
+                  const { rate, review, reviewDate, userName } = item;
+                  return (
+                    <div key={index} className={Styles.review}>
+                      <StarsRating value={rate} />
+                      <p>{review}</p>
+                      <span>
+                        <b>{reviewDate}</b>
+                      </span>
+                      <br />
+                      <span>
+                        <b>by: {userName}</b>
+                      </span>
+                    </div>
+                  );
+                })}
+              </>
+            )}
+          </div>
+        </Card>
+
       </div>
    </section>
   )

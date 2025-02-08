@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import Styles from './ProductList.module.scss';
-import {BsFillGridFill} from 'react-icons/bs'
-import {FaListAlt} from 'react-icons/fa'
 import SearchApp from '../../Search/Search';
 import ProductItems from '../productItem/ProductItems';
 import { useDispatch, useSelector } from 'react-redux';
