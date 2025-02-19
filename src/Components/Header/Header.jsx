@@ -27,14 +27,6 @@ const Logo = (
 
 
 
-//re-useable mobileCart
-const mobileCart = (
-  <span className={styles.cart}>
-  <Link to='/cart'>  <p>0</p> <HiShoppingCart size={20}/></Link>
-    </span>
-);
-
-
 const successmsg = (
   <p className='text-2xl'>Logout successfully</p>
 );
@@ -97,6 +89,14 @@ const Header = () => {
   useEffect(() => {
     dispatch(CALCULATE_TOTAL_QUANTITY());
   }, []);
+
+
+  //re-useable mobileCart
+const mobileCart = (
+  <span className={styles.cart}>
+  <Link to='/cart'>  <p>{cartTotalQuantity}</p> <HiShoppingCart size={20}/></Link>
+    </span>
+);
 
 
   //Re-useable cart
