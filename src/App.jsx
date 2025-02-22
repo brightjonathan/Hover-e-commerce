@@ -51,16 +51,22 @@ const App = () => {
 
 
        <Route path="/product-details/:id" element={<ProductDetails />} />
-       <Route path="/order-history" element={<OrderHistory />} />
        <Route path="/cart" element={<Cart />} />
+       <Route path="/order-history" element={<OrderHistory />} />
        <Route path='/review-product/:id' element={ <ProductReview/> }/>
 
       </Routes>
-
       <Footer/>
-        <ToastContainer position='top-right' theme="colored" />
+    <ToastContainer position='top-right' theme="colored" />
     </BrowserRouter>
   )
 }
 
 export default App;
+
+
+//things to complete
+// 1. checkout-details
+// 2. checkout
+// 3. checkout-success
+// 4. /order-details/:id

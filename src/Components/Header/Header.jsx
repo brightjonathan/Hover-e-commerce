@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 import styles from './Header.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {HiOutlineMenuAlt3, HiShoppingCart} from 'react-icons/hi'
