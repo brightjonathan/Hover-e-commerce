@@ -20,6 +20,9 @@ import ProductDetails from './Components/Product/productDetails/ProductDetails';
 import OrderHistory from './Pages/OrderHistory/OrderHistory';
 import Cart from './Pages/Cart/Cart';
 import ProductReview from './Components/ProductReview/ProductReview';
+import CheckOutDetails from './Pages/CheckOut/CheckOutDetails';
+import Checkout from './Pages/CheckOut/Checkout';
+import CheckOutSuccess from './Pages/CheckOut/CheckOutSuccess';
 
 
 
@@ -54,6 +57,10 @@ const App = () => {
        <Route path="/cart" element={<Cart />} />
        <Route path="/order-history" element={<OrderHistory />} />
        <Route path='/review-product/:id' element={ <ProductReview/> }/>
+
+       <Route path="/checkout-details" element={<CheckOutDetails />} />
+       <Route path="/checkout" element={<Checkout />} />
+       <Route path="/checkout-success" element={<CheckOutSuccess />} />
 
       </Routes>
       <Footer/>
