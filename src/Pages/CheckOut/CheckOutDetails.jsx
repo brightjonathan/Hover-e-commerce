@@ -50,12 +50,13 @@ const CheckOutDetails = () => {
 
       
   return (
+    
     <section>
       <div className={`container ${styles.checkout}`}>
-        <h2>Checkout Details</h2>
+        <h2 className="pt-[10vh]">Checkout Details</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <Card cardClass={styles.card}>
+          <Card cardClass={styles.card}>
               <h3>Shipping Address</h3>
               <label>Recipient Name</label>
               <input
@@ -66,7 +67,7 @@ const CheckOutDetails = () => {
                 value={shippingAddress.name}
                 onChange={(e) => handleShipping(e)}
               />
-              <label>Address line 1</label>
+               <label>Address line 1</label>
               <input
                 type="text"
                 placeholder="Address line 1"
@@ -133,102 +134,19 @@ const CheckOutDetails = () => {
                 value={shippingAddress.phone}
                 onChange={(e) => handleShipping(e)}
               />
-            </Card>
-            {/* BILLING ADDRESS */}
-            <Card cardClass={styles.card}>
-              <h3>Billing Address</h3>
-              <label>Recipient Name</label>
-              <input
-                type="text"
-                placeholder="Name"
-                required
-                name="name"
-                value={billingAddress.name}
-                onChange={(e) => handleBilling(e)}
-              />
-              <label>Address line 1</label>
-              <input
-                type="text"
-                placeholder="Address line 1"
-                required
-                name="line1"
-                value={billingAddress.line1}
-                onChange={(e) => handleBilling(e)}
-              />
-              <label>Address line 2</label>
-              <input
-                type="text"
-                placeholder="Address line 2"
-                name="line2"
-                value={billingAddress.line2}
-                onChange={(e) => handleBilling(e)}
-              />
-              <label>City</label>
-              <input
-                type="text"
-                placeholder="City"
-                required
-                name="city"
-                value={billingAddress.city}
-                onChange={(e) => handleBilling(e)}
-              />
-              <label>State</label>
-              <input
-                type="text"
-                placeholder="State"
-                required
-                name="state"
-                value={billingAddress.state}
-                onChange={(e) => handleBilling(e)}
-              />
-              <label>Postal code</label>
-              <input
-                type="text"
-                placeholder="Postal code"
-                required
-                name="postal_code"
-                value={billingAddress.postal_code}
-                onChange={(e) => handleBilling(e)}
-              />
-              {/* COUNTRY INPUT */}
-              <CountryDropdown
-                className={styles.select}
-                valueType="short"
-                value={billingAddress.country}
-                onChange={(val) =>
-                  handleBilling({
-                    target: {
-                      name: "country",
-                      value: val,
-                    },
-                  })
-                }
-              />
-              <label>Phone</label>
-              <input
-                type="text"
-                placeholder="Phone"
-                required
-                name="phone"
-                value={billingAddress.phone}
-                onChange={(e) => handleBilling(e)}
-              />
-              <button type="submit" className="--btn --btn-primary">
-                Proceed To Checkout
-              </button>
-            </Card>
+          </Card>
           </div>
-          <div>
-            <Card cardClass={styles.card}>
-              <CheckoutSummary />
-            </Card>
-          </div>
+
         </form>
       </div>
+
     </section>
   )
 }
 
 export default CheckOutDetails;
+
+
+
 
 
